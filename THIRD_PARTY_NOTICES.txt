@@ -1,0 +1,59 @@
+Thyme
+Copyright (c) 2013 João Moreno
+Licensed under the MIT License. See LICENSE.
+
+DDHotKey
+Copyright (c) 2010, Dave DeLong <http://www.davedelong.com>
+
+Permission to use, copy, modify, and/or distribute this software for any purpose
+with or without fee is hereby granted, provided that the above copyright notice
+and this permission notice appear in all copies.
+
+The software is provided "as is", without warranty of any kind, including all
+implied warranties of merchantability and fitness. In no event shall the author(s)
+or copyright holder(s) be liable for any claim, damages, or other liability,
+whether in an action of contract, tort, or otherwise, arising from, out of, or in
+connection with the software or the use or other dealings in the software.
+
+ShortcutRecorder
+The source is pinned to the publicly available joaomoreno/ShortcutRecorder
+commit e16bb69bff0732c00e912c360d221b622ec92df8, used by Thyme 0.5.1:
+https://github.com/joaomoreno/ShortcutRecorder/tree/e16bb69bff0732c00e912c360d221b622ec92df8
+
+The BSD terms and contributor credits are preserved in
+ShortcutRecorder/Resources/LICENSE.txt and in the built application's
+ShortcutRecorder.framework/Resources/LICENSE.txt. Preserve these notices
+when distributing source or binaries; do not imply contributor endorsement.
+
+ShortcutRecorder 2 graphics are credited to Alexander Ljungberg, Wireload,
+in that same upstream notice, which links to CC BY 3.0:
+https://creativecommons.org/licenses/by/3.0/
+The graphics in the pinned dependency are unchanged by this fork. Preserve
+their credit and license link; identify any future adaptations.
+
+PTHotKey / HotKeysLib3
+The original PTHotKey code has a permissive grant in the author's archive:
+https://rogueamoeba.com/sources/HotKeysLib3.zip
+See LICENSES/HotKeysLib3.txt for the grant, reproduced below, and
+LICENSES/PROVENANCE.txt for the source-file lineage and upstream changes.
+The original wording is retained; this is not labeled as standard MIT.
+The later ShortcutRecorder changes are distributed with that project's
+BSD terms. Its Wireload integration and the original PTHotKey source retain
+their file-level credits, including:
+Copyright (c) 2003 Quentin D. Carnicelli. All rights reserved.
+Copyright (c) 2003 Cliché Software. All rights reserved.
+Copyright 2011 Wireload. All rights reserved.
+
+Original HotKeysLib3 grant:
+
+Copyright (c) 2003-2004 Rogue Amoeba Software LLC, Quentin D. Carnicelli, Finlay Dobbie, Vincent Pottier
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Growl SDK 2.0.1
+The historical Growl framework remains in the upstream source tree for source
+history, but the native build does not link, copy, or execute it. Its matching
+upstream SDK tag supplies the BSD terms preserved in LICENSES/Growl-2.0.1.txt:
+https://github.com/growl/growl/blob/a270645f00e650f1d8447aed490720eb0d3a5e76/License.txt

@@ -20,6 +20,7 @@
 - (void)notifyStart;
 - (void)notifyPauseWithDescription:(NSString*)description;
 - (void)notifyStopWithDescription:(NSString*)description;
+- (void)notifyWithBody:(NSString*)body;
 
 - (void)save:(NSTimeInterval)value;
 
@@ -214,17 +215,18 @@
 }
 
 - (void)updateStatusBar {
+    NSStatusBarButton *button = self.statusItem.button;
     if ([self.stopwatch isStopped]) {
-        [statusItem setLength:26.0];
-        [statusItem setTitle:@""];
+        button.title = @"";
         
         NSImage *logo = [NSImage imageNamed:@"logo_small"];
         [logo setTemplate:YES];
-        [statusItem setImage: logo];
+        button.image = logo;
+        button.accessibilityLabel = @"Thyme — stopped";
     } else {
-        [statusItem setLength:[self.stopwatch value] > 3600 ? 72.0 : 46.0];
-        [statusItem setTitle:[self.stopwatch description]];
-        [statusItem setImage:nil];
+        button.title = [self.stopwatch description];
+        button.image = nil;
+        button.accessibilityLabel = [@"Thyme — " stringByAppendingString:button.title];
     }
 }
 
@@ -309,17 +311,40 @@
 
 - (void)notifyStart
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:@"Started" notificationName:@"start" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    [self notifyWithBody:@"Started"];
 }
 
 - (void)notifyPauseWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Paused at " stringByAppendingString:description] notificationName:@"pause" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    [self notifyWithBody:[@"Paused at " stringByAppendingString:description]];
 }
 
 - (void)notifyStopWithDescription:(NSString*)description
 {
-    [GrowlApplicationBridge notifyWithTitle:@"Thyme" description:[@"Stopped at " stringByAppendingString:description] notificationName:@"stop" iconData:nil priority:0 isSticky:NO clickContext:nil];
+    [self notifyWithBody:[@"Stopped at " stringByAppendingString:description]];
+}
+
+- (void)notifyWithBody:(NSString*)body
+{
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert completionHandler:^(BOOL granted, NSError *error) {
+        if (!granted) {
+            return;
+        }
+        UNMutableNotificationContent *content = [[[UNMutableNotificationContent alloc] init] autorelease];
+        content.title = @"Thyme";
+        content.body = body;
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:[[NSUUID UUID] UUIDString]
+                                                                               content:content trigger:nil];
+        [center addNotificationRequest:request withCompletionHandler:nil];
+    }];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+      willPresentNotification:(UNNotification *)notification
+        withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+{
+    completionHandler(UNNotificationPresentationOptionBanner);
 }
 
 #pragma mark NSUserDefaultsDidChangeNotification
@@ -430,8 +455,7 @@
     self.hotKeyCenter = center;
     [center release];
     
-    // Setup Growl
-    [GrowlApplicationBridge setGrowlDelegate:self];
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
 
     // Setup user defaults notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserDefaultsChange:) name:NSUserDefaultsDidChangeNotification object:nil];
@@ -498,8 +522,10 @@
     self.stopwatch = [[Stopwatch alloc] initWithDelegate:self];
     
     NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
-    self.statusItem = [statusBar statusItemWithLength:46.0];
-    [statusItem setHighlightMode:YES];
+    self.statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem.autosaveName = @"ThymeTimer";
+    self.statusItem.button.font = [NSFont monospacedDigitSystemFontOfSize:[NSFont systemFontSize]
+                                                                weight:NSFontWeightRegular];
     [statusItem setMenu:menu];
     
     [self updateStatusBar];
@@ -522,9 +548,15 @@
 
 - (NSString *)applicationSupportDirectory
 {
+    NSString *override = [[[NSProcessInfo processInfo] environment] objectForKey:@"THYME_DATA_DIRECTORY"];
+    if ([override length] > 0) {
+        NSAssert([override isAbsolutePath], @"THYME_DATA_DIRECTORY must be an absolute path");
+        return override;
+    }
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-    return [basePath stringByAppendingPathComponent:@"Thyme"];
+    NSString *directoryName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ThymeDataDirectoryName"];
+    return [basePath stringByAppendingPathComponent:directoryName ?: @"Thyme"];
 }
 
 
@@ -570,7 +602,7 @@
     
     if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] )
     {
-		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error])
+		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:YES attributes:nil error:&error])
         {
             NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
             NSLog(@"Error creating application support directory at %@ : %@",applicationSupportDirectory,error);

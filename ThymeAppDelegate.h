@@ -5,13 +5,13 @@
 //  Created by João Moreno on 2/8/10.
 //
 
-#import <Growl/Growl.h>
 #import <Cocoa/Cocoa.h>
+#import <UserNotifications/UserNotifications.h>
 #import "DDHotKeyCenter.h"
 #import "Stopwatch.h"
 #import "PreferencesWindowController.h"
 
-@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate, StopwatchDelegate>
+@interface ThymeAppDelegate : NSObject <NSApplicationDelegate, UNUserNotificationCenterDelegate, StopwatchDelegate>
 {
     Stopwatch* stopwatch;
     DDHotKeyCenter *hotKeyCenter;

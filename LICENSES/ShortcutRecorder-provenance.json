@@ -1,0 +1,127 @@
+{
+  "description": "Origin record for the publicly pinned Thyme 0.5.1 ShortcutRecorder submodule; records the baseline source files and primary PTHotKey license evidence.",
+  "files": {
+    "PTHotKey/PTHotKey+ShortcutRecorder.h": {
+      "git_blob": "65bb765da870a7415b6be70469df68a63a84138f",
+      "git_mode": "100644",
+      "sha256": "6e9d11fec18486117516c3606795d383d681b9dac37ec5e41f9911f9ae1acc26"
+    },
+    "PTHotKey/PTHotKey+ShortcutRecorder.m": {
+      "git_blob": "883378024bfe1e105fc29343b206b9ff91ec4e3a",
+      "git_mode": "100644",
+      "sha256": "052b8c40afbc481bef27d2f77544756ade37ae7d5b2f0aa2fdfd4d822928819d"
+    },
+    "PTHotKey/PTHotKey.h": {
+      "git_blob": "c9f07e8a238ab13e3db038f68cd107a76619a5f9",
+      "git_mode": "100644",
+      "sha256": "565968a9c10d824a3ff0ecfeef72e0365d7057befb1efd22ee2fed2c90be3e9a"
+    },
+    "PTHotKey/PTHotKey.m": {
+      "git_blob": "bd54dad51e158848b0e7b9d819c2875efef7d166",
+      "git_mode": "100644",
+      "sha256": "6a102557771f33c08db9a8482e1f7f275279908577fdd4df39d2eb6e1b288d68"
+    },
+    "PTHotKey/PTHotKeyCenter.h": {
+      "git_blob": "d2ff857b5ed32d6f06140098e3ddf45ae6451c0b",
+      "git_mode": "100644",
+      "sha256": "77e94569b161d5217a9ff60ee76d5227d725148bd6f66fd7ff61132fbfdedcd7"
+    },
+    "PTHotKey/PTHotKeyCenter.m": {
+      "git_blob": "c34d1147af3d90305c187f868d411f20e84bd4c2",
+      "git_mode": "100644",
+      "sha256": "31b6378dc27292312e550760af2b048945a0c35b69e0f4d0606e1bd6c8832753"
+    },
+    "PTHotKey/PTKeyCodeTranslator.h": {
+      "git_blob": "27e7ba7f61b5ec7a7a0375d4d322396a00e1a351",
+      "git_mode": "100644",
+      "sha256": "90d139eb8c441e9340948e02d43562147f154d40a2b22ef960654b34c459ff3f"
+    },
+    "PTHotKey/PTKeyCodeTranslator.m": {
+      "git_blob": "6f878d61096d88aaf1e91d1dce214e6a17dca740",
+      "git_mode": "100644",
+      "sha256": "dd45e88b64a9ebb7f488ef6bee199ebab33f8579a6f331a3d6a08b1b1e99fbf4"
+    },
+    "PTHotKey/PTKeyCombo.h": {
+      "git_blob": "4af0163883bc8c566a4ce7eccb5649fe55127e7e",
+      "git_mode": "100644",
+      "sha256": "30bc58f7534c06e3df379afb277731a11517a36a10161bb37912103893d98b82"
+    },
+    "PTHotKey/PTKeyCombo.m": {
+      "git_blob": "0f4831b5cc24bbd7ba9806d7c41b859d4d02d932",
+      "git_mode": "100644",
+      "sha256": "1e8c352546f3e53a1438e94a50e83dbc8f2b794d4815beafa87668401a7275b7"
+    },
+    "Resources/LICENSE.txt": {
+      "git_blob": "e28d398b8adf8f3c4963bb4dd12fd7916680237a",
+      "git_mode": "100644",
+      "sha256": "7d9309680c5393c11bf50de606daaff01c6c19c42dadfa9ee66d4c359d06dd6b"
+    }
+  },
+  "format_version": 1,
+  "history": {
+    "64_bit_port": "https://github.com/joaomoreno/ShortcutRecorder/commit/a1448a1ba1590dce8aac4c14b1c247700d07ea07",
+    "graphics_attribution_update": "https://github.com/joaomoreno/ShortcutRecorder/commit/955794da302e7270eb6a3600da0b0b804c2983ae",
+    "wireload_category_in_framework": "https://github.com/joaomoreno/ShortcutRecorder/commit/059f1252a0b0a0e0ef4b419450e24888341c5cc7",
+    "wireload_category_introduction": "https://github.com/joaomoreno/ShortcutRecorder/commit/d48bbf455f955c7234af0771865c163cf7112415"
+  },
+  "pthotkey_primary_source": {
+    "archive_sha256": "176a8482cee763c96c0cd0cc9a29d28bdaff661f436adb1bc3b366413233dd82",
+    "archive_url": "https://rogueamoeba.com/sources/HotKeysLib3.zip",
+    "corresponding_files": {
+      "PTHotKey/PTHotKey.h": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTHotKey.h",
+        "archive_sha256": "86235bc52cb2345c37eba9574dfe91baa42944778eb11293b6dc1e4781be299c",
+        "pinned_sha256": "565968a9c10d824a3ff0ecfeef72e0365d7057befb1efd22ee2fed2c90be3e9a"
+      },
+      "PTHotKey/PTHotKey.m": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTHotKey.m",
+        "archive_sha256": "ac789c1b3e9c19feb426f543b856d0e3aac84efb926b8369b568f4ce039dc1c9",
+        "pinned_sha256": "6a102557771f33c08db9a8482e1f7f275279908577fdd4df39d2eb6e1b288d68"
+      },
+      "PTHotKey/PTHotKeyCenter.h": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTHotKeyCenter.h",
+        "archive_sha256": "a6889f45997bd663c07bf2cffa37c0f2109b4c2953ad971ed00acb860e52842c",
+        "pinned_sha256": "77e94569b161d5217a9ff60ee76d5227d725148bd6f66fd7ff61132fbfdedcd7"
+      },
+      "PTHotKey/PTHotKeyCenter.m": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTHotKeyCenter.m",
+        "archive_sha256": "416a4fc4d4e0f62439e2469084c6dcbe9c02d8fd16abe4c880b059bb1c721c67",
+        "pinned_sha256": "31b6378dc27292312e550760af2b048945a0c35b69e0f4d0606e1bd6c8832753"
+      },
+      "PTHotKey/PTKeyCodeTranslator.h": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTKeyCodeTranslator.h",
+        "archive_sha256": "564ee912df3fe4d430a5d40d7c7466c65020d51825bd4ef6b0a8531fad16489b",
+        "pinned_sha256": "90d139eb8c441e9340948e02d43562147f154d40a2b22ef960654b34c459ff3f"
+      },
+      "PTHotKey/PTKeyCodeTranslator.m": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTKeyCodeTranslator.m",
+        "archive_sha256": "49c5d4bb4a17dc3cf2675b0cf837a923b29985832333c0a4168198e65625db1a",
+        "pinned_sha256": "dd45e88b64a9ebb7f488ef6bee199ebab33f8579a6f331a3d6a08b1b1e99fbf4"
+      },
+      "PTHotKey/PTKeyCombo.h": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTKeyCombo.h",
+        "archive_sha256": "632da16b774c144554e06d2ebe0a6e59ea7f3725f0c75cb01332003d64ba086f",
+        "pinned_sha256": "30bc58f7534c06e3df379afb277731a11517a36a10161bb37912103893d98b82"
+      },
+      "PTHotKey/PTKeyCombo.m": {
+        "archive_path": "HotKeysLib3/PTHotKeysLib/src/PTKeyCombo.m",
+        "archive_sha256": "350d7433ecaa09642c082d45418b4ebb9145613b3c5b65927bb31faf57bdd044",
+        "pinned_sha256": "1e8c352546f3e53a1438e94a50e83dbc8f2b794d4815beafa87668401a7275b7"
+      }
+    },
+    "index_url": "https://rogueamoeba.com/opensource/",
+    "license_archive_path": "HotKeysLib3/LICENSE.txt",
+    "license_local_path": "HotKeysLib3.txt",
+    "license_local_sha256": "91189ce8eb5feb225fc85463ba8b9f7337ab0e24ebadb99a62047bced37fe4a3",
+    "license_normalization": "CR line endings converted to LF; words unchanged",
+    "license_original_sha256": "bb74ce39efa28d5b0e814b62dc550d5f592ca3113640bb46dae1890ea4b9dcc4",
+    "sdk_10_5_patch": {
+      "purpose": "Corroborates the TIS/Unicode keyboard-layout API changes in the pinned translator.",
+      "sha256": "eced1722e96f8628b042319b72fb18231407077e3907c06f0ee7864df8df57c7",
+      "url": "https://rogueamoeba.com/sources/HotKeys3-105SDK.patch"
+    }
+  },
+  "upstream_commit": "e16bb69bff0732c00e912c360d221b622ec92df8",
+  "upstream_repository": "https://github.com/joaomoreno/ShortcutRecorder",
+  "upstream_tree": "28b934ded3f8f8dede6dea5b6bbc939e52193b7e"
+}

@@ -1,0 +1,82 @@
+Dependency license provenance
+Checked 2026-10-28
+
+Scope
+The root LICENSE remains João Moreno's MIT license for Thyme. It does not
+replace the dependency terms. No dependency source, graphics, or submodule
+revision was changed for this licensing correction.
+
+ShortcutRecorder
+The Git submodule remains publicly retrievable at:
+https://github.com/joaomoreno/ShortcutRecorder/tree/e16bb69bff0732c00e912c360d221b622ec92df8
+Git tree: 28b934ded3f8f8dede6dea5b6bbc939e52193b7e
+
+Its BSD license, contributor list, and graphics attribution are here:
+https://github.com/joaomoreno/ShortcutRecorder/blob/e16bb69bff0732c00e912c360d221b622ec92df8/Resources/LICENSE.txt
+They remain unmodified in ShortcutRecorder/Resources/LICENSE.txt.
+
+PTHotKey: original authors' permission
+The original distribution is linked by Rogue Amoeba's own source-code page:
+https://rogueamoeba.com/opensource/
+Archive: https://rogueamoeba.com/sources/HotKeysLib3.zip
+Archive SHA-256:
+176a8482cee763c96c0cd0cc9a29d28bdaff661f436adb1bc3b366413233dd82
+
+HotKeysLib3/LICENSE.txt names Rogue Amoeba Software LLC, Quentin D. Carnicelli,
+Finlay Dobbie, and Vincent Pottier and expressly permits use, modification,
+publication, distribution, sublicensing, and sale. HotKeysLib3.txt preserves
+that grant, with only CR line endings normalized to LF. Unlike standard MIT,
+the original text has no notice-retention clause; do not replace it with a
+different license template. We retain the complete grant and source credits.
+
+Source linkage, not a license borrowed from a related fork
+The original archive's PTHotKeysLib/src directory contains these same eight
+files: PTHotKey.h/.m, PTHotKeyCenter.h/.m, PTKeyCodeTranslator.h/.m, and
+PTKeyCombo.h/.m. Direct source comparison shows the shared implementation and
+file-level Carnicelli/Cliché/Dobbie credits. The pinned copies are derivatives,
+not byte-identical copies of this older release. In particular, the translator
+contains the same class and Unicode translation operation, with the later TIS
+keyboard-layout API and memory-management changes. The author-hosted patch
+also documents that API transition:
+https://rogueamoeba.com/sources/HotKeys3-105SDK.patch
+
+The dependency's own 64-bit port commit records the subsequent source changes:
+https://github.com/joaomoreno/ShortcutRecorder/commit/a1448a1ba1590dce8aac4c14b1c247700d07ea07
+ShortcutRecorder-provenance.json records SHA-256 hashes of the original archive
+files, the pinned files, the license, and the author-hosted patch, along with
+the pinned Git blobs. It allows this comparison to be repeated precisely.
+
+Later integration and graphics
+PTHotKey+ShortcutRecorder.h/.m are later additions by Ilya Kulakov, credited to
+Wireload. They were introduced in the BSD-licensed ShortcutRecorder project:
+https://github.com/joaomoreno/ShortcutRecorder/commit/d48bbf455f955c7234af0771865c163cf7112415
+License at that introduction:
+https://github.com/joaomoreno/ShortcutRecorder/blob/d48bbf455f955c7234af0771865c163cf7112415/LICENSE.txt
+The integration was updated and added to the framework in:
+https://github.com/joaomoreno/ShortcutRecorder/commit/059f1252a0b0a0e0ef4b419450e24888341c5cc7
+The original HotKeysLib3 grant is evidence for the original code; the later
+ShortcutRecorder additions retain that project's BSD terms and their credits.
+
+The pinned graphics credit names Alexander Ljungberg of Wireload and links
+to CC BY 3.0. The dependency's attribution update is recorded here:
+https://github.com/joaomoreno/ShortcutRecorder/commit/955794da302e7270eb6a3600da0b0b804c2983ae
+Keep the contributor/graphics credits and https://creativecommons.org/licenses/by/3.0/
+with redistributions. These graphics have not been adapted by this fork.
+
+DDHotKey
+DDHotKeyCenter.h and DDHotKeyCenter.m contain Dave DeLong's own permissive grant.
+THIRD_PARTY_NOTICES.txt reproduces its copyright, permission, and disclaimer.
+
+Retained Growl SDK
+The unused Frameworks/Growl.framework identifies itself as SDK 2.0.1. The
+matching official Growl_SDK_2.0.1 tag points to this source revision and license:
+https://github.com/growl/growl/tree/a270645f00e650f1d8447aed490720eb0d3a5e76
+https://github.com/growl/growl/blob/a270645f00e650f1d8447aed490720eb0d3a5e76/License.txt
+Growl-2.0.1.txt preserves that license without edits. The native build does not
+link or bundle Growl. Keep its BSD notice with the retained historical bundle.
+
+Distribution conditions
+Preserve the root MIT license, these dependency grants, the BSD conditions and
+disclaimers, file-level notices, and graphics attribution. Do not imply that
+upstream authors endorse this fork. This records copyright-license evidence;
+it makes no claim that an ad-hoc signature is notarization or endorsement.
